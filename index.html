@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePro Academy | Programming for Kids & Teens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        (function() {
+            emailjs.init("m1Mt42dnvjvFHOUW4");
+        })();
+    </script>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #ff9e00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fb;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background: #e11570;
+            box-shadow: 0 6px 20px rgba(247, 37, 133, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23f5f7fb"/></svg>');
+            background-size: 100% 100px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .proof-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .proof-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .proof-item img {
+            height: 50px;
+            margin-bottom: 10px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .proof-item img:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Programs Section */
+        .programs {
+            background: var(--light);
+        }
+        
+        .program-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 25px 25px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .card-body {
+            padding: 20px 25px;
+        }
+        
+        .card-body ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .card-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .card-body li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .card-footer {
+            padding: 0 25px 25px;
+        }
+        
+        /* Learning Path */
+        .learning-path {
+            background: white;
+        }
+        
+        .path-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .path-container:before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--primary);
+            z-index: 1;
+        }
+        
+        .path-step {
+            background: white;
+            border: 5px solid var(--primary);
+            border-radius: 50%;
+            width: 110px;
+            height: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            margin: 0 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .path-step i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .path-step span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            background: var(--light);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* B2B Section */
+        .b2b {
+            background: white;
+        }
+        
+        .b2b-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .b2b-text {
+            flex: 1;
+        }
+        
+        .b2b-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .b2b-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offerings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .offering {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+            color: white;
+        }
+        
+        .testimonials h2:after {
+            background: var(--accent);
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .gallery-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--light);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .location-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .location-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .b2b-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .path-container {
+                flex-wrap: wrap;
+            }
+            
+            .path-container:before {
+                display: none;
+            }
+            
+            .path-step {
+                margin: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .proof-items {
+                justify-content: center;
+            }
+            
+            .proof-item {
+                width: 50%;
+                margin-bottom: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/WF04Q4R9/LOGO-1.png" alt="CodePro Academy Logo">
+                CodePro Academy
+            </a>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#gallery">Student Gallery</a></li>
+                <li><a href="#b2b">For Organizations</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Igniting a Passion for Technology</h1>
+                <p>Where Kids & Teens Build the Future with Code, Robotics, and Innovation. From playful coding to professional IOT systems.</p>
+                <div class="hero-btns">
+                    <a href="#programs" class="btn">Explore Courses</a>
+                    <a href="https://wa.me/2001044357569" class="btn btn-accent">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Students learning coding">
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container proof-items">
+            <div class="proof-item">
+                <img src="https://i.postimg.cc/TKXF2YD3/STM-Brand-Assets-POS-BADGE-ACC-CIR-01.png" alt="STEM.org Certified">
+                <p>STEM.org Certified</p>
+            </div>
+            <div class="proof-item">
+                <i class="fas fa-map-marker-alt fa-3x"></i>
+                <p>3 Locations</p>
+            </div>
+            <div class="proof-item">
+                <i class="fas fa-users fa-3x"></i>
+                <p>500+ Students</p>
+            </div>
+            <div class="proof-item">
+                <i class="fas fa-graduation-cap fa-3x"></i>
+                <p>Professional Instructors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <h2>Our Programs</h2>
+            <div class="program-cards">
+                <!-- Junior Course -->
+                <div class="program-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Junior Course (Ages 6-9)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Introduction to programming logic and basic electronics through fun, interactive projects.</p>
+                        <ul>
+                            <li>Pre Express Code.org</li>
+                            <li>Scratch Jr</li>
+                            <li>Basic Electronics</li>
+                            <li>Express Code.org</li>
+                            <li>Scratch 3</li>
+                            <li>Micro:bit</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Senior Course -->
+                <div class="program-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Senior Course (Ages 10-12)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Building on fundamentals with more complex programming concepts and robotics.</p>
+                        <ul>
+                            <li>Pre Express Course</li>
+                            <li>Electronics</li>
+                            <li>Arduino using Scratch</li>
+                            <li>Advanced Arduino</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Advanced Course -->
+                <div class="program-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Advanced Course (Ages 13-17)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Transition to professional programming languages and advanced robotics systems.</p>
+                        <ul>
+                            <li>Python</li>
+                            <li>Micro Python with ESP32</li>
+                            <li>C++</li>
+                            <li>ESP32 Robotics</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Teen & College Program -->
+                <div class="program-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Teen & College (Ages 17-24)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Professional IOT development with cloud integration and real-world applications.</p>
+                        <ul>
+                            <li>Python/MicroPython with ESP32</li>
+                            <li>C++ with ESP32</li>
+                            <li>AWS Cloud Services</li>
+                            <li>Web Servers & HTTPS</li>
+                            <li>IOT System Design</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="learning-path">
+        <div class="container">
+            <h2>Structured Learning Path</h2>
+            <div class="path-container">
+                <div class="path-step">
+                    <i class="fas fa-child"></i>
+                    <span>Junior</span> <span>Course</span>
+                </div>
+                <div class="path-step">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Senior </span> <span>Course</span>
+                </div>
+                <div class="path-step">
+                    <i class="fas fa-code"></i>
+                    <span>Advanced Course</span>
+                </div>
+                <div class="path-step">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Professional IOT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2>Why Choose CodePro Academy?</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-tools"></i>
+                    <h3>We Provide the Tools</h3>
+                    <p>All hardware and software provided in class. Kits available for purchase for home practice.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h3>International Standards</h3>
+                    <p>We use globally recognized platforms like Tinkercad, WiKiWi, and Replit.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Certified Instructors</h3>
+                    <p>Our team consists of engineers and CS graduates, certified by STEM.org.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Multiple Locations & Online</h3>
+                    <p>Flexible learning from our campuses in 6 October, Nasr City, Banha, or live online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Student Achievements Gallery</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Celebrating our students' success and certifications</p>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Certifications</button>
+                <button class="filter-btn" data-filter="junior">Junior Course</button>
+                <button class="filter-btn" data-filter="senior">Senior Course</button>
+                <button class="filter-btn" data-filter="advanced">Advanced Course</button>
+                <button class="filter-btn" data-filter="iot">IOT Program</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Certificate 1 -->
+                <div class="gallery-item" data-category="junior">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Student Certificate" class="gallery-image">
+                    <div class="gallery-info">
+                        <h4>Scratch Jr Certification</h4>
+                        <p>Completed by: Ahmed Mohamed</p>
+                        <p>Age: 7 years</p>
+                        <span class="cert-badge">Junior Course</span>
+                    </div>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="gallery-item" data-category="senior">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Arduino Certificate" class="gallery-image">
+                    <div class="gallery-info">
+                        <h4>Arduino Robotics Certification</h4>
+                        <p>Completed by: Mariam Hassan</p>
+                        <p>Age: 11 years</p>
+                        <span class="cert-badge">Senior Course</span>
+                    </div>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="gallery-item" data-category="advanced">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Python Certificate" class="gallery-image">
+                    <div class="gallery-info">
+                        <h4>Python Programming Certification</h4>
+                        <p>Completed by: Omar Khalil</p>
+                        <p>Age: 15 years</p>
+                        <span class="cert-badge">Advanced Course</span>
+                    </div>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="gallery-item" data-category="iot">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="IOT Certificate" class="gallery-image">
+                    <div class="gallery-info">
+                        <h4>IOT System Design Certification</h4>
+                        <p>Completed by: Sarah Ahmed</p>
+                        <p>Age: 18 years</p>
+                        <span class="cert-badge">IOT Program</span>
+                    </div>
+                </div>
+                
+                <!-- Certificate 5 -->
+                <div class="gallery-item" data-category="junior">
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Micro:bit Certificate" class="gallery-image">
+                    <div class="gallery-info">
+                        <h4>Micro:bit Programming Certification</h4>
+                        <p>Completed by: Youssef Ibrahim</p>
+                        <p>Age: 8 years</p>
+                        <span class="cert-badge">Junior Course</span>
+                    </div>
+                </div>
+                
+                <!-- Certificate 6 -->
+                <div class="gallery-item" data-category="advanced">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="C++ Certificate" class="gallery-image">
+                    <div class="gallery-info">
+                        <h4>C++ Programming Certification</h4>
+                        <p>Completed by: Nadia Mostafa</p>
+                        <p>Age: 16 years</p>
+                        <span class="cert-badge">Advanced Course</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Section -->
+    <section class="b2b" id="b2b">
+        <div class="container">
+            <h2>For Organizations & Schools</h2>
+            <div class="b2b-content">
+                <div class="b2b-text">
+                    <h3>Empower Your Students with Future-Ready STEM Curriculum</h3>
+                    <p>Integrate CodePro Academy's proven hardware-focused programs into your school or organization. Our structured path leads to tangible student projects and competition readiness.</p>
+                    
+                    <div class="offerings">
+                        <div class="offering">
+                            <h4>After-School STEM Clubs</h4>
+                            <p>Turn-key robotics and coding clubs managed by our certified instructors.</p>
+                        </div>
+                        <div class="offering">
+                            <h4>Curriculum Integration</h4>
+                            <p>Supplement your CS/ICT curriculum with our project-based learning modules.</p>
+                        </div>
+                        <div class="offering">
+                            <h4>Teacher Training</h4>
+                            <p>Upskill your faculty with our STEM.org certified training programs.</p>
+                        </div>
+                        <div class="offering">
+                            <h4>Workshops & Bootcamps</h4>
+                            <p>Host intensive, topic-specific workshops for your students.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn">Partner With Us</a>
+                </div>
+                <div class="b2b-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="School partnership">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Parents & Partners Say</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "My daughter started with Scratch Jr and now she's building her own robots with Arduino. CodePro Academy made learning fun and challenging at the same time!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <h4>Sarah Mohamed</h4>
+                            <p>Parent of 12-year-old student</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "After partnering with CodePro, our students' engagement in science subjects increased by 40%. Their hands-on approach is unmatched in the education sector."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div>
+                            <h4>Ahmed Khalil</h4>
+                            <p>Director, Future Generation School</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The IOT course prepared me for my university studies in computer engineering. I was already building cloud-connected systems before my peers!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MA</div>
+                        <div>
+                            <h4>Mariam Adel</h4>
+                            <p>Former Student, Now Computer Engineering Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Locations</h4>
+                            <p>
+                                <a href="https://maps.app.goo.gl/aMkCsbaEwtCM2MVK7" target="_blank" class="location-link">6 October City</a><br>
+                                <a href="https://maps.app.goo.gl/uq1kAU6kxqszKZMp6" target="_blank" class="location-link">Nasr City</a><br>
+                                <a href="https://maps.app.goo.gl/7eNPnpWtAnfq59v79" target="_blank" class="location-link">Banha</a><br>
+                                Online Classes Available
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone & WhatsApp</h4>
+                            <p><a href="https://wa.me/2001044357569" target="_blank" class="location-link">01044357569</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:admin@codepro-academy.com" class="location-link">admin@codepro-academy.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Saturday - Thursday: 9:00 AM - 9:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/15N9g999XK/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/codeproacademy1?igsh=N2h0aTNkaTA0Z2V4&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@code.pro.academy?_t=ZS-9080gIaizjE&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/2001044357569" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="from_name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="from_email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="from_phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Program Interest</label>
+                            <select id="interest" name="program_interest" class="form-control" required>
+                                <option value="">Select a program</option>
+                                <option value="junior">Junior Course (Ages 6-9)</option>
+                                <option value="senior">Senior Course (Ages 10-12)</option>
+                                <option value="advanced">Advanced Course (Ages 13-17)</option>
+                                <option value="teen">Teen & College Program (Ages 17-24)</option>
+                                <option value="b2b">B2B Partnership</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="successMessage" class="success-message">
+                        Thank you for your message! We will get back to you soon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CodePro Academy</h3>
+                    <p>Igniting a passion for technology in kids and teens through hands-on coding, robotics, and innovation.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/15N9g999XK/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/codeproacademy1?igsh=N2h0aTNkaTA0Z2V4&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@code.pro.academy?_t=ZS-9080gIaizjE&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/2001044357569" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="#programs">Junior Course (Ages 6-9)</a></li>
+                        <li><a href="#programs">Senior Course (Ages 10-12)</a></li>
+                        <li><a href="#programs">Advanced Course (Ages 13-17)</a></li>
+                        <li><a href="#programs">Teen & College Program</a></li>
+                        <li><a href="#b2b">B2B Partnerships</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#gallery">Student Gallery</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#b2b">For Organizations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Locations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/aMkCsbaEwtCM2MVK7" target="_blank">6 October City</a></li>
+                        <li><a href="https://maps.app.goo.gl/uq1kAU6kxqszKZMp6" target="_blank">Nasr City</a></li>
+                        <li><a href="https://maps.app.goo.gl/7eNPnpWtAnfq59v79" target="_blank">Banha</a></li>
+                        <li><a href="#contact">Online Classes</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 CodePro Academy. All rights reserved. | Certified by STEM.org</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after clicking a link
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Form Submission with EmailJS - UPDATED CREDENTIALS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using EmailJS - USE YOUR ACTUAL IDs
+            emailjs.sendForm('service_9pyub64', 'template_9fr470h', this)
+                .then(function() {
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(function() {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                }, function(error) {
+                    alert('Sorry, there was an error sending your message. Please try again or contact us directly at 01044357569.');
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Gallery Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
